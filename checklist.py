@@ -20,16 +20,17 @@ class Item:
     reward_xp = 0
     reward_hp = 0
 
-    def __init__(self, time_to_do, what_to_do):
-        self.time_to_do = time_to_do
+    def __init__(self, time_left, what_to_do, item_value):
+        self.time_left = time_left
         self.what_to_do = what_to_do
+        self.item_value = item_value
 
     def reward_amt(self):
-        self.reward_xp = self.time_to_do / 2
-        if self.time_to_do / 2 > 25:
+        self.reward_xp = self.time_left * self.item_value / 2
+        if self.time_left / 2 > 25:
             self.reward_hp = 25
         else:
-            self.reward_hp = self.time_to_do / 2
+            self.reward_hp = self.time_left / 2
 
     def complete_task(self):
         self.item_complete = True
@@ -56,16 +57,19 @@ class Checklist:
 
 
 if debugger:
+
+    time_to_do = 30
+    item_weight = 2
     test = Checklist()
-    test_item1 = Item(30, "Fix my Checklist")
-    test_item2 = Item(30, "Create a check off function")
-    test_item3 = Item(30, "Figure out the rest of the details on the list")
-    test_item4 = Item(30, "Apologize to sarah because I used lists over arrays")
-    test_item5 = Item(30, "Finally get sleep after tormenting self past 4am")
-    test_item6 = Item(30, "Try to wake up for breakfast.")
-    test_item7 = Item(30, "Most issues get fixed.")
-    test_item8 = Item(30, "Attempt to test crossout function.")
-    test_item9 = Item(30, "The Bed Calls to me.")
+    test_item1 = Item(time_to_do, "Fix my Checklist", item_weight)
+    test_item2 = Item(time_to_do, "Create a check off function", item_weight)
+    test_item3 = Item(time_to_do, "Figure out the rest of the details on the list", item_weight)
+    test_item4 = Item(time_to_do, "Apologize to sarah because I used lists over arrays", item_weight)
+    test_item5 = Item(time_to_do, "Finally get sleep after tormenting self past 4am", item_weight)
+    test_item6 = Item(time_to_do, "Try to wake up for breakfast.", item_weight)
+    test_item7 = Item(time_to_do, "Most issues get fixed.", item_weight)
+    test_item8 = Item(time_to_do, "Attempt to test crossout function.", item_weight)
+    test_item9 = Item(time_to_do, "The Bed Calls to me.", item_weight)
     test.add_list(test_item1)
     test.add_list(test_item2)
     test.add_list(test_item3)
