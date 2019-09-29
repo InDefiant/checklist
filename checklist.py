@@ -41,7 +41,6 @@ class Item:
         self.item_complete = True
         self.reward_amt()
         c1.add_hp_xp(self.reward_hp, self.reward_xp)
-        c1.hunger_time.cancel()
 
 
 class Checklist:
@@ -64,8 +63,8 @@ class Checklist:
 
 if debugger:
 
-    time_start = 60
-    time_end = 30
+    time_start = 30
+    time_end = 60
     item_weight = 2
     test = Checklist()
     test_item1 = Item(time_start, time_end, "Fix my Checklist", item_weight)
