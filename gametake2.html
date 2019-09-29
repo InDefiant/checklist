@@ -1,0 +1,19 @@
+<head>
+    <head>
+        <link rel="stylesheet" href="custom.css">
+    </head>
+    <body>
+        <div id="app" class="layout">
+            <h1 v-if="finished">IT FREAKIN WORKS</h1>
+            <template v-for="(shape, index) in shapeArray">
+                <!-- Add element for the opposite v-if and set it equal to the card css but with a black background (create a new class for it). -->
+                <custom-rectangle v-on:selected="handleSelect" :visible="visible" :index="index" :matched="shape.matched" :active="shape.active" :color="shape.color" v-if="shape.shape_type === 'square' && !shape.matched"></custom-rectangle>
+                <custom-circle v-on:selected="handleSelect" :visible="visible" :index="index" :matched="shape.matched" :active="shape.active" :color="shape.color" v-if="shape.shape_type === 'circle' && !shape.matched"></custom-circle>
+                <custom-triangle v-on:selected="handleSelect" :visible="visible" :index="index" :matched="shape.matched" :active="shape.active" :color="shape.color" v-if="shape.shape_type === 'triangle' && !shape.matched"></custom-triangle>
+            </template>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="gametake2.js"></script>
+    </body>
+</head>
+

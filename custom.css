@@ -1,0 +1,53 @@
+body {
+  background-color: black;
+}
+
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin-top: 40px;
+  max-width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  padding: 20px 50px;
+  box-shadow: 0 10px 7px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.3s;
+  flex: 1;
+}
+
+.card:hover {
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
+}
+
+.card:active {
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+  background-color: black;
+}
+
+.rectangle {
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.circle {
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: red;
+}
+
+.triangle {
+  margin-top: 20px;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 50px solid red;
+}
